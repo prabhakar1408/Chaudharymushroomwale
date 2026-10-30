@@ -9,7 +9,7 @@ h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15}
 .brand img{width:46px;height:46px;border-radius:50%}
 .links{display:flex;gap:28px}
 .links a{color:var(--bark);text-decoration:none;font-weight:500}
-.links a[aria-current]{color:var(--clay)}
+.links a:hover,.links a[aria-current]{color:var(--clay)}
 .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-family:inherit;font-size:1rem;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer}
 .btn-clay{background:var(--clay);color:#fff}
 .btn-line{border-color:var(--cream);color:var(--cream)}
@@ -26,7 +26,7 @@ h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15}
 .row{display:flex;gap:14px;flex-wrap:wrap}
 .ph{background:var(--taupe);border-radius:20px;min-height:300px;position:relative;display:grid;place-items:center}
 .ph span{position:absolute;left:14px;bottom:12px;font-size:.85rem}
-.logo-big{width:72%;max-width:340px;border-radius:50%}
+.logo-big{width:70%;max-width:260px;border-radius:50%}
 .sec{padding:64px 0}
 .alt{background:var(--oat)}
 .sec h2{font-size:clamp(1.8rem,3.5vw,2.4rem);margin:8px 0 6px}
