@@ -1,8 +1,9 @@
 window.CONFIG = {
-  phone: "+91 XXXXXXXXXX",
-  whatsapp: "91XXXXXXXXXX",
-  email: "yourname@gmail.com",
-  address: "Your full address",
-  city: "Your City, State",
-  hours: "Mon-Sat, 6 AM - 8 PM"
+  phone1: "9559202053",
+  phone2: "7081022053",
+  whatsapp: "919559202053",
+  facebook: "https://www.facebook.com/share/1KiZKuS1dX/",
+  instagram: "https://www.instagram.com/chaudharymushroomwale",
+  address: "",
+  hours: ""
 };
