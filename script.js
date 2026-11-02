@@ -5,6 +5,7 @@ document.querySelectorAll('[data-tel]').forEach(a => {
   a.href = 'tel:+91' + n;
   if (a.hasAttribute('data-show')) (a.querySelector('span') || a).textContent = (a.dataset.label || '') + fmt(n);
 });
+document.querySelectorAll('[data-num]').forEach(e => { const n = C[e.dataset.num]; if (n) e.textContent = fmt(n); });
 document.querySelectorAll('[data-wa]').forEach(a => { a.href = 'https://wa.me/' + C.whatsapp; a.target = '_blank'; a.rel = 'noopener'; });
 document.querySelectorAll('[data-fb]').forEach(a => { a.href = C.facebook; a.target = '_blank'; a.rel = 'noopener'; });
 document.querySelectorAll('[data-ig]').forEach(a => { a.href = C.instagram; a.target = '_blank'; a.rel = 'noopener'; });
@@ -14,10 +15,16 @@ document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Da
 const cur = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.links a').forEach(a => { if (a.getAttribute('href') === cur) a.setAttribute('aria-current', 'page'); });
 const nav = document.querySelector('.nav'), bg = document.querySelector('.burger');
+const onSc = () => nav.classList.toggle('sc', window.scrollY > 10); onSc(); window.addEventListener('scroll', onSc, { passive: true });
 if (bg) {
   bg.addEventListener('click', () => { const o = nav.classList.toggle('open'); bg.setAttribute('aria-expanded', o); });
   document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 }
+const rv = document.querySelectorAll('.rv');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  rv.forEach(el => io.observe(el));
+} else rv.forEach(el => el.classList.add('in'));
 const f = document.getElementById('inquiry');
 if (f) f.addEventListener('submit', e => {
   e.preventDefault();
